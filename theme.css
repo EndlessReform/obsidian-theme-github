@@ -1433,3 +1433,8 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
   content: "";
   border-radius: var(--size-2-3);
 }
+
+/* Gutter */
+.cm-lineNumbers .cm-gutterElement {
+  color: var(--background-modifier-border);
+}
