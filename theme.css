@@ -185,6 +185,7 @@ body {
   --bold-color: inherit;
   /* Borders */
   --border-width: 1px;
+  --border-width-thin: max(1px, 0.0625rem);
   /* Buttons */
   --button-radius: var(--input-radius);
   /* Callouts */
@@ -680,7 +681,7 @@ body {
   --background-modifier-active-hover: hsla(var(--interactive-accent-hsl), 0.15);
   --background-modifier-border: var(--color-base-30);
   --background-modifier-border-hover: var(--color-base-30);
-  --background-modifier-border-focus: var(--color-accent);
+  --background-modifier-border-focus: var(--color-base-50);
   --background-modifier-error-rgb: var(--color-red-rgb);
   --background-modifier-error: var(--color-red);
   --background-modifier-error-hover: var(--color-red);
@@ -1437,4 +1438,56 @@ body:not(.is-phone) .vertical-tab-nav-item.is-active {
 /* Gutter */
 .cm-lineNumbers .cm-gutterElement {
   color: var(--background-modifier-border);
+}
+
+/* Modals */
+.modal-content h2 {
+  margin-block-start: 0.5rem;
+}
+
+/* Calendar */
+.day.has-note.active {
+  --color-dot: var(--text-on-accent);
+}
+
+.reset-button {
+  margin-top: 1px !important;
+}
+
+.calendar > tbody > tr > td {
+  vertical-align: top;
+}
+
+/* Vim mode */
+.cm-vim-panel.cm-panel span {
+  font-family: var(--font-monospace) !important;
+}
+
+/* Hotkeys */
+.suggestion-item.mod-complex .suggestion-hotkey {
+  border: var(--border-width-thin) solid var(--borderColor-muted);
+  margin-left: var(--size-4-1);
+}
+
+/* font-size: var(--font-ui-smaller);
+font-family: var(--font-interface);
+padding: 2px 6px;
+border: var(--border-width-thin) solid var(--borderColor-muted); */
+/* border-color: var(--borderColor-muted); */
+
+.setting-hotkey {
+  font-size: var(--font-ui-smaller);
+  font-family: var(--font-interface);
+  border: var(--border-width-thin) solid var(--borderColor-muted);
+  background-color: var(--code-background);
+}
+
+.setting-delete-hotkey:hover {
+  background-color: var(--background-modifier-border-hover);
+  color: var(--text-error);
+}
+
+/* Nav tags */
+.nav-file-tag {
+  border: var(--border-width-thin) solid var(--borderColor-muted);
 }
