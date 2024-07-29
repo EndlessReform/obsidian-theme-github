@@ -717,6 +717,7 @@ body {
   --rgb-hover: 177, 186, 196;
   --color-red-rgb: 248, 81, 73;
   --color-red: #f47067;
+  --color-red-6: #b62324;
   --color-green-rgb: 126, 231, 135;
   --color-green-rgb-4: 46, 160, 67;
   --color-green: #7ee787;
@@ -740,10 +741,14 @@ body {
   --color-base-60: #999; /* Unused */
   --color-base-70: #8b949e;
   /* --color-base-100: #c9d1d9; */
+  --color-base-90: #c9d1d9;
   /* Yes, this isn't Primer compliant. Take it up with github.com. */
   --color-base-100: #e6edf3;
 
   --fgColor-muted: #8d96a0;
+  --button-default-bgColor-rest: var(--color-base-35);
+  --button-default-borderColor-rest: var(--color-base-40);
+  --button-default-bgColor-hover: var(--color-base-40);
 
   --accent-h-theme: 212;
   --accent-s-theme: 100%;
@@ -813,6 +818,7 @@ body {
   --rgb-hover: 208, 215, 222;
   --color-red-rgb: 228, 55, 75;
   --color-red: #cf222e;
+  --color-red-6: #a40e26;
   --color-green-rgb: 12, 181, 79;
   --color-green-rgb-4: 45, 164, 78;
   --color-green: #0cb54f;
@@ -888,6 +894,10 @@ body {
 
   --titlebar-background-focused: var(--background-primary-alt);
   --titlebar-background: var(--background-primary);
+
+  --button-default-bgColor-rest: var(--color-base-20);
+  --button-default-borderColor-rest: var(--color-base-30);
+  --button-default-bgColor-hover: var(--color-base-30);
 }
 
 body.colorblind_protan-deutan.theme-dark {
@@ -1490,4 +1500,141 @@ border: var(--border-width-thin) solid var(--borderColor-muted); */
 /* Nav tags */
 .nav-file-tag {
   border: var(--border-width-thin) solid var(--borderColor-muted);
+}
+
+/* Links */
+.external-link {
+  background-size: 12px;
+}
+
+/* Spaced repetition */
+.sr-deck-counts.tree-item-flair {
+  display: inline-block;
+  border-radius: 2em;
+  padding: 0 7px;
+  border: 1px solid transparent;
+  line-height: 18px;
+  font-size: var(--font-ui-smaller);
+  font-weight: var(--font-semibold);
+  background-color: transparent !important;
+}
+
+.tag-pane-tag-count.sr-deck-counts.tree-item-flair:first-of-type {
+  border-color: var(--color-orange);
+  color: var(--color-orange) !important;
+}
+
+.sr-deck-counts.tree-item-flair:nth-of-type(2) {
+  border-color: var(--color-blue);
+  color: var(--color-blue);
+}
+
+.sr-deck-counts.tree-item-flair:nth-of-type(3) {
+  border-color: var(--color-purple);
+  color: var(--color-purple);
+}
+
+.modal-title.sr-centered {
+  gap: 6px;
+}
+
+.modal-title.sr-centered p {
+  padding-left: 16px;
+}
+
+.modal-title.sr-centered .sr-deck-counts.tree-item-flair:nth-of-type(1)::after {
+  content: " due";
+}
+
+.modal-title.sr-centered .sr-deck-counts.tree-item-flair:nth-of-type(2)::after {
+  content: " new";
+}
+
+.modal-title.sr-centered .sr-deck-counts.tree-item-flair:nth-of-type(3)::after {
+  content: " total";
+}
+
+#sr-flashcard-view .tree-item-self.is-clickable {
+  padding: 6px 12px;
+}
+
+.sr-flashcard-menu-item {
+  background-color: var(--button-default-bgColor-rest) !important;
+  border: 1px solid var(--button-default-borderColor-rest);
+  color: var(--text-muted);
+  padding: var(--size-4-1);
+  margin-right: 8px;
+}
+
+.theme-dark .sr-flashcard-menu-item:hover {
+  background-color: #161b22 !important;
+}
+
+.sr-flashcard-menu-item:last-of-type {
+  margin-right: 0;
+}
+
+#sr-flashcard-view code {
+  font-family: var(--font-monospace);
+}
+
+.sr-flashcard-response {
+  display: flex !important;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#sr-hard-btn,
+#sr-good-btn,
+#sr-easy-btn {
+  margin: 0;
+  border-radius: var(--button-radius);
+  height: 40px;
+  font-size: var(--font-ui-small);
+  font-weight: var(--font-ui-medium);
+  padding: 0rem 1rem;
+}
+
+#sr-hard-btn {
+  background-color: var(--button-default-bgColor-rest);
+  color: var(--text-error);
+}
+
+#sr-hard-btn:hover {
+  color: var(--text-normal);
+  background-color: var(--color-red-6);
+  border-color: #f0f6fc1a;
+  box-shadow: none !important;
+}
+
+#sr-good-btn,
+#sr-easy-btn,
+#sr-show-answer {
+  background-color: var(--button-default-bgColor-rest);
+  color: var(--color-base-90);
+}
+
+#sr-show-answer {
+  height: 40px;
+  line-height: 40px;
+  border-radius: var(--button-radius);
+  box-shadow: var(--input-shadow);
+}
+
+#sr-good-btn:hover,
+#sr-easy-btn:hover {
+  background-color: var(--button-default-bgColor-hover);
+}
+
+#sr-context {
+  font-size: var(--font-ui-small);
+  font-style: normal;
+}
+
+#sr-hr-card-divide {
+  border: none;
+  border-top: var(--hr-thickness) solid;
+  border-color: var(--divider-color);
+  margin: 2rem 0;
+  border-width: 1px;
 }
